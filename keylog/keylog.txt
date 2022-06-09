@@ -1,0 +1,17 @@
+Thu Jun 09 | 2022 | 11:54:30 - Key.shift
+Thu Jun 09 | 2022 | 11:54:30 - 'T'
+Thu Jun 09 | 2022 | 11:54:31 - 'h'
+Thu Jun 09 | 2022 | 11:54:31 - 'i'
+Thu Jun 09 | 2022 | 11:54:31 - 's'
+Thu Jun 09 | 2022 | 11:54:31 - Key.space
+Thu Jun 09 | 2022 | 11:54:31 - 'i'
+Thu Jun 09 | 2022 | 11:54:31 - 's'
+Thu Jun 09 | 2022 | 11:54:32 - Key.space
+Thu Jun 09 | 2022 | 11:54:32 - 'a'
+Thu Jun 09 | 2022 | 11:54:32 - Key.space
+Thu Jun 09 | 2022 | 11:54:32 - 't'
+Thu Jun 09 | 2022 | 11:54:32 - 'e'
+Thu Jun 09 | 2022 | 11:54:32 - 's'
+Thu Jun 09 | 2022 | 11:54:32 - 't'
+Thu Jun 09 | 2022 | 11:54:32 - '.'
+Thu Jun 09 | 2022 | 11:54:34 - Key.space
